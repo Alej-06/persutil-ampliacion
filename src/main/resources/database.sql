@@ -468,3 +468,45 @@ ALTER TABLE `tarea`
 ALTER TABLE `uski_libro_visita`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 COMMIT;
+
+
+-- ----------- ALAN ---------------------------------
+
+CREATE TABLE `jspreguntas` (
+  `id` bigint NOT NULL,
+  `question` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
+  `answer1` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
+  `answer2` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
+  `answer3` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
+  `answer4` varchar(255) COLLATE utf16_unicode_ci NOT NULL,
+  `correct` tinyint NOT NULL,
+  `create_date` datetime NOT NULL,
+  `modify_date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `jspreguntas`
+--
+ALTER TABLE `jspreguntas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `jspreguntas`
+--
+ALTER TABLE `jspreguntas`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+COMMIT;
+
+
+
+
+
+
