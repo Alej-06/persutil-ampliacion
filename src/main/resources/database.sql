@@ -301,6 +301,32 @@ ALTER TABLE `soares`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3137;
 COMMIT;
 
+-- --------------------------------------------------------
+
+-- Estructura de tabla para la tabla `ideas`
+
+CREATE TABLE `ideas` (
+  `id` bigint NOT NULL,
+  `titulo` varchar(255) COLLATE utf32_unicode_ci NOT NULL,
+  `comentario` text COLLATE utf32_unicode_ci NOT NULL,
+  `categoria` enum('IDEA','MEJORA','BUG') COLLATE utf32_unicode_ci NOT NULL,
+  `publico` tinyint(1) NOT NULL DEFAULT '1',
+  `fecha_creacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fecha_modificacion` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
+
+-- Índices para tablas volcadas
+
+-- Indices de la tabla `ideas`
+ALTER TABLE `ideas`
+  ADD PRIMARY KEY (`id`);
+
+-- AUTO_INCREMENT de las tablas volcadas
+
+-- AUTO_INCREMENT de la tabla `ideas`
+ALTER TABLE `ideas`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
