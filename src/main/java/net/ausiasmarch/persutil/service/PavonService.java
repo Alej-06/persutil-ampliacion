@@ -111,4 +111,13 @@ public class PavonService {
         return existingPavon.getId();
     }
 
+    public Long empty() {
+        if (!oSessionService.isSessionActive()) {
+            throw new UnauthorizedException("No active session");
+        }
+        Long total = oPavonRepository.count();
+        oPavonRepository.deleteAll();
+        return total;
+    }
+
 }
